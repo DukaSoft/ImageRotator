@@ -1,5 +1,4 @@
-﻿// Assume the original image is stored in a variable called image
-using ImageRotator;
+﻿using ImageRotator;
 using System.Drawing;
 using System.IO;
 

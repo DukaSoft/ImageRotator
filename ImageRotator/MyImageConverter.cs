@@ -25,16 +25,16 @@ public static class MyImageConverter
 		// Clone the bottom part of the image
 		Bitmap bottomPart = image.Clone(bottomRect, image.PixelFormat);
 
-		// Rotate the bottom part of the image by 180 degrees
+		// Rotate the top part of the image by 180 degrees
 		topPart.RotateFlip(RotateFlipType.Rotate180FlipNone);
 
 		// Create a new bitmap that has the same size as the original image
 		Bitmap result = new Bitmap(width, height);
 		// Create a graphics object from the result bitmap
 		Graphics g = Graphics.FromImage(result);
-		// Draw the top part of the image onto the result bitmap
+		// Draw the bottom part of the image onto the result bitmap
 		g.DrawImage(bottomPart, 0, 0, width, height / 2);
-		// Draw the rotated bottom part of the image onto the result bitmap
+		// Draw the rotated top part of the image onto the result bitmap
 		g.DrawImage(topPart, 0, height / 2, width, height / 2);
 		// Dispose the graphics object
 		g.Dispose();
